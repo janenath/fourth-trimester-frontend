@@ -1,4 +1,5 @@
 import history from '../history'
+import axios from 'axios'
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
@@ -19,9 +20,9 @@ export function loginUser(creds) {
     }
     return dispatch => {
         dispatch(requestLogin(creds))
-        return fetch('https://fourth-trimester-api.herokuapp.com/authenticate', config)
+        return axios('https://fourth-trimester-api.herokuapp.com/authenticate', config)
         .then(response => {
-          
+
             return response.json().then(user => ({ user, response }))
         }).then(({ user, response }) => {
                 if(!response.ok) {
