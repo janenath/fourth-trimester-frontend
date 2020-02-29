@@ -25,7 +25,7 @@ export function fetchArticleDetails() {
     let config = {}
     if(token) {
       config = {
-          url: 'http://localhost:3000/articles',
+          url: 'https://fourth-trimester-app.herokuapp.com/articles',
           headers: { 'Authorization': `Bearer ${token}` }
       }
       } else {
