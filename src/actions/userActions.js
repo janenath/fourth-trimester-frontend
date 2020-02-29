@@ -22,7 +22,7 @@ export function loginUser(creds) {
         return fetch('https://fourth-trimester-api.herokuapp.com/authenticate', config)
         .then(response => {
           console.log(config.body)
-            console.log(response)
+            console.log(response.json())
             return response.json().then(user => ({ user, response }))
         }).then(({ user, response }) => {
                 if(!response.ok) {
