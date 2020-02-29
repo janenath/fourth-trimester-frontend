@@ -19,7 +19,7 @@ export function loginUser(creds) {
     }
     return dispatch => {
         dispatch(requestLogin(creds))
-        return fetch('https://fourth-trimester.herokuapp.com/authenticate', config)
+        return fetch('https://fourth-trimester-api.herokuapp.com/authenticate', config)
         .then(response => {
           console.log(config.body)
             console.log(response)
@@ -99,7 +99,7 @@ export function signupUser(creds) {
   }
   return dispatch => {
       dispatch(requestSignup(creds))
-      return fetch('https://fourth-trimester.herokuapp.com/authenticate', config)
+      return fetch('https://fourth-trimester-api.herokuapp.com/authenticate', config)
       .then(response =>
           response.json().then(user => ({ user, response }))
           ).then(({ user, response }) => {
